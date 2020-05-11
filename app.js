@@ -66,6 +66,11 @@ app.get("/", (req, res) => {
 
 app.get("/sign-up", (req, res) => res.render("sign-up-form"));
 
+app.get("/log-out", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
+
 app.post(
   "/log-in",
   passport.authenticate("local", {
